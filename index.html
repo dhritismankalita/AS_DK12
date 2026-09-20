@@ -2,16 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Bright Future Academy</title>
+<title>ASHIN ACADEMY | NEET & JEE Coaching</title>
 
 <style>
 
-/* =========================
-   GLOBAL STYLES
-========================= */
+/* =========================================
+   RESET
+========================================= */
 
 *{
     margin:0;
@@ -22,8 +23,8 @@
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#f5f9ff;
-    color:#17233c;
+    background:#f7f9fc;
+    color:#101828;
     overflow-x:hidden;
 }
 
@@ -33,7 +34,7 @@ a{
 }
 
 section{
-    padding:90px 8%;
+    padding:100px 8%;
 }
 
 .container{
@@ -42,16 +43,16 @@ section{
 }
 
 
-/* =========================
+/* =========================================
    NAVBAR
-========================= */
+========================================= */
 
 nav{
     position:fixed;
     top:0;
     left:0;
+
     width:100%;
-    z-index:1000;
 
     display:flex;
     justify-content:space-between;
@@ -59,20 +60,24 @@ nav{
 
     padding:18px 8%;
 
-    background:rgba(255,255,255,.75);
-    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(18px);
 
-    border-bottom:1px solid rgba(0,0,0,.05);
+    border-bottom:1px solid #e5e7eb;
+
+    z-index:1000;
 }
 
 .logo{
     font-size:25px;
-    font-weight:800;
-    color:#2563eb;
+    font-weight:900;
+    letter-spacing:-1px;
+
+    color:#dc2626;
 }
 
 .logo span{
-    color:#f59e0b;
+    color:#111827;
 }
 
 .nav-links{
@@ -82,626 +87,729 @@ nav{
 }
 
 .nav-links a{
-    font-size:15px;
-    font-weight:600;
+    font-size:14px;
+    font-weight:700;
+
     transition:.3s;
 }
 
 .nav-links a:hover{
-    color:#2563eb;
+    color:#dc2626;
+}
+
+.nav-btn{
+    background:#dc2626;
+    color:white;
+
+    padding:11px 20px;
+
+    border-radius:8px;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(220,38,38,.25);
 }
 
 
-/* =========================
-   HERO SECTION
-========================= */
+/* =========================================
+   HERO
+========================================= */
 
 .hero{
     min-height:100vh;
-    position:relative;
 
     display:flex;
     align-items:center;
 
+    position:relative;
     overflow:hidden;
 
     background:
-    linear-gradient(135deg,#e9f4ff,#ffffff 55%,#fff5d9);
+    radial-gradient(circle at 80% 30%,#fee2e2,transparent 30%),
+    linear-gradient(135deg,#ffffff,#f8fafc);
 }
 
 .hero-content{
+    max-width:700px;
+
     position:relative;
     z-index:5;
-    max-width:650px;
 }
 
-.badge{
+.hero-tag{
     display:inline-block;
 
+    background:#fee2e2;
+    color:#b91c1c;
+
     padding:9px 18px;
+
     border-radius:50px;
 
-    background:#dbeafe;
-    color:#2563eb;
+    font-size:13px;
+    font-weight:800;
 
-    font-size:14px;
-    font-weight:bold;
+    margin-bottom:25px;
 
-    margin-bottom:20px;
-
-    animation:float 3s ease-in-out infinite;
+    animation:pulse 2.5s infinite;
 }
 
 .hero h1{
-    font-size:clamp(45px,7vw,82px);
-    line-height:1.02;
-    margin-bottom:25px;
+    font-size:clamp(50px,7vw,88px);
+
+    line-height:.98;
+
+    letter-spacing:-4px;
+
+    margin-bottom:28px;
 }
 
 .hero h1 span{
-    color:#2563eb;
+    color:#dc2626;
 }
 
 .hero p{
+    max-width:620px;
+
+    color:#667085;
+
     font-size:18px;
-    line-height:1.7;
-    color:#64748b;
-    margin-bottom:30px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
 }
 
-.buttons{
+.hero-buttons{
     display:flex;
     gap:15px;
     flex-wrap:wrap;
 }
 
 .btn{
-    padding:15px 27px;
-    border-radius:12px;
-    font-weight:bold;
+    padding:16px 26px;
+
+    border-radius:10px;
+
+    font-weight:800;
 
     transition:.3s;
 }
 
 .btn-primary{
-    background:#2563eb;
+    background:#dc2626;
     color:white;
 
-    box-shadow:0 10px 25px rgba(37,99,235,.25);
+    box-shadow:0 12px 30px rgba(220,38,38,.25);
 }
 
 .btn-primary:hover{
     transform:translateY(-5px);
-    box-shadow:0 15px 35px rgba(37,99,235,.4);
+    box-shadow:0 18px 40px rgba(220,38,38,.35);
 }
 
-.btn-secondary{
+.btn-outline{
+    border:1px solid #d0d5dd;
     background:white;
-    border:1px solid #dbe3ef;
 }
 
-.btn-secondary:hover{
+.btn-outline:hover{
     transform:translateY(-5px);
 }
 
 
-/* =========================
-   FLOATING DECORATIONS
-========================= */
+/* =========================================
+   HERO DECORATION
+========================================= */
 
-.circle{
+.hero-orb{
     position:absolute;
+
     border-radius:50%;
+
     filter:blur(1px);
+
+    opacity:.7;
 }
 
-.circle.one{
-    width:350px;
-    height:350px;
+.orb1{
+    width:450px;
+    height:450px;
 
-    background:#bfdbfe;
+    background:#fee2e2;
 
-    right:8%;
-    top:20%;
+    right:-100px;
+    top:100px;
 
     animation:float 6s ease-in-out infinite;
 }
 
-.circle.two{
+.orb2{
     width:180px;
     height:180px;
 
-    background:#fde68a;
+    background:#fecaca;
 
     right:30%;
-    bottom:8%;
+    bottom:50px;
 
     animation:float 4s ease-in-out infinite reverse;
 }
 
-.circle.three{
-    width:100px;
-    height:100px;
 
-    background:#bbf7d0;
+/* =========================================
+   FLOATING SCIENCE SYMBOLS
+========================================= */
 
-    right:5%;
-    bottom:20%;
+.symbol{
+    position:absolute;
+
+    font-weight:900;
+
+    color:#dc2626;
+
+    opacity:.13;
+
+    font-size:60px;
 
     animation:float 5s ease-in-out infinite;
 }
 
-
-/* =========================
-   SCHOOL ILLUSTRATION
-========================= */
-
-.school{
-    position:absolute;
-
-    right:9%;
-    bottom:12%;
-
-    width:360px;
-    height:300px;
-
-    z-index:4;
-
-    animation:schoolFloat 5s ease-in-out infinite;
+.symbol.s1{
+    right:30%;
+    top:25%;
 }
 
-.school-roof{
-    position:absolute;
-
-    top:15px;
-    left:20px;
-
-    width:320px;
-    height:90px;
-
-    background:#2563eb;
-
-    clip-path:polygon(50% 0,100% 100%,0 100%);
-
-    border-radius:10px;
+.symbol.s2{
+    right:12%;
+    bottom:30%;
+    animation-delay:1s;
 }
 
-.school-body{
-    position:absolute;
-
-    top:90px;
-    left:50px;
-
-    width:260px;
-    height:170px;
-
-    background:white;
-
-    border:6px solid #17233c;
-    border-radius:8px;
-}
-
-.school-door{
-    position:absolute;
-
-    bottom:0;
-    left:105px;
-
-    width:50px;
-    height:90px;
-
-    background:#f59e0b;
-
-    border:4px solid #17233c;
-}
-
-.window{
-    position:absolute;
-
-    width:45px;
-    height:45px;
-
-    background:#93c5fd;
-
-    border:4px solid #17233c;
-
-    top:35px;
-}
-
-.window.left{
-    left:25px;
-}
-
-.window.right{
-    right:25px;
-}
-
-.flag{
-    position:absolute;
-
-    top:0;
-    left:175px;
-
-    width:5px;
-    height:65px;
-
-    background:#17233c;
-}
-
-.flag::after{
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:5px;
-
-    width:45px;
-    height:28px;
-
-    background:#f59e0b;
-
-    clip-path:polygon(0 0,100% 25%,70% 100%,0 75%);
+.symbol.s3{
+    right:40%;
+    bottom:15%;
+    animation-delay:2s;
 }
 
 
-/* =========================
-   CLOUDS
-========================= */
-
-.cloud{
-    position:absolute;
-
-    width:130px;
-    height:45px;
-
-    background:white;
-
-    border-radius:50px;
-
-    opacity:.8;
-
-    animation:cloudMove 20s linear infinite;
-}
-
-.cloud::before,
-.cloud::after{
-    content:"";
-
-    position:absolute;
-
-    background:white;
-
-    border-radius:50%;
-}
-
-.cloud::before{
-    width:60px;
-    height:60px;
-
-    left:20px;
-    bottom:10px;
-}
-
-.cloud::after{
-    width:75px;
-    height:75px;
-
-    right:20px;
-    bottom:5px;
-}
-
-.cloud.one{
-    top:18%;
-    left:-150px;
-}
-
-.cloud.two{
-    top:35%;
-    left:-300px;
-
-    animation-delay:8s;
-}
-
-
-/* =========================
-   SECTION TITLES
-========================= */
+/* =========================================
+   SECTION TITLE
+========================================= */
 
 .section-title{
     text-align:center;
-    margin-bottom:55px;
+
+    margin-bottom:60px;
+}
+
+.section-title .mini{
+    color:#dc2626;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
 }
 
 .section-title h2{
-    font-size:42px;
-    margin-bottom:12px;
+    font-size:45px;
+
+    margin:12px 0;
 }
 
 .section-title p{
-    color:#64748b;
+    color:#667085;
 }
 
 
-/* =========================
-   FEATURES
-========================= */
+/* =========================================
+   EXAM CARDS
+========================================= */
 
-.features{
+.exams{
     background:white;
 }
 
-.cards{
+.exam-grid{
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:25px;
 }
 
-.card{
-    padding:35px;
+.exam-card{
+    position:relative;
 
-    background:#f8fafc;
+    padding:38px;
 
-    border-radius:20px;
+    background:#fff;
 
-    border:1px solid #e5e7eb;
+    border:1px solid #eaecf0;
+
+    border-radius:18px;
+
+    overflow:hidden;
 
     transition:.4s;
-
-    position:relative;
-    overflow:hidden;
 }
 
-.card::before{
+.exam-card::before{
     content:"";
 
     position:absolute;
 
-    width:100px;
-    height:100px;
-
-    background:#dbeafe;
+    width:120px;
+    height:120px;
 
     border-radius:50%;
 
-    right:-40px;
-    top:-40px;
+    background:#fee2e2;
+
+    right:-50px;
+    top:-50px;
 
     transition:.4s;
 }
 
-.card:hover{
+.exam-card:hover{
     transform:translateY(-12px);
 
-    box-shadow:0 20px 45px rgba(15,23,42,.1);
+    box-shadow:0 25px 50px rgba(16,24,40,.1);
 }
 
-.card:hover::before{
-    transform:scale(2);
+.exam-card:hover::before{
+    transform:scale(2.2);
 }
 
-.icon{
-    font-size:40px;
-    margin-bottom:20px;
+.exam-icon{
     position:relative;
+
+    font-size:45px;
+
+    margin-bottom:20px;
 }
 
-.card h3{
-    font-size:22px;
+.exam-card h3{
+    font-size:25px;
+
     margin-bottom:12px;
 }
 
-.card p{
-    color:#64748b;
+.exam-card p{
+    color:#667085;
+
     line-height:1.7;
+
+    margin-bottom:20px;
+}
+
+.exam-card a{
+    color:#dc2626;
+
+    font-weight:800;
 }
 
 
-/* =========================
-   STATS
-========================= */
+/* =========================================
+   RESULTS
+========================================= */
 
-.stats{
-    background:#17233c;
+.results{
+    background:#101828;
+
     color:white;
-}
-
-.stats-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    text-align:center;
-    gap:30px;
-}
-
-.stat h3{
-    font-size:45px;
-    color:#60a5fa;
-}
-
-.stat p{
-    color:#cbd5e1;
-    margin-top:8px;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about{
-    background:#f8fafc;
-}
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
-}
-
-.about-image{
-    min-height:400px;
-
-    border-radius:30px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #2563eb,
-        #60a5fa
-    );
 
     position:relative;
 
     overflow:hidden;
-
-    box-shadow:0 25px 60px rgba(37,99,235,.25);
 }
 
-.about-image::before{
+.results::before{
     content:"";
 
     position:absolute;
 
-    width:250px;
-    height:250px;
-
-    background:#fde68a;
+    width:500px;
+    height:500px;
 
     border-radius:50%;
 
-    top:-80px;
-    right:-60px;
+    background:#dc2626;
+
+    opacity:.1;
+
+    right:-200px;
+    top:-200px;
 }
 
-.about-image::after{
-    content:"🏫";
-
-    position:absolute;
-
-    font-size:150px;
-
-    left:50%;
-    top:50%;
-
-    transform:translate(-50%,-50%);
-}
-
-.about-text h2{
-    font-size:42px;
-    margin-bottom:20px;
-}
-
-.about-text p{
-    color:#64748b;
-    line-height:1.8;
-    margin-bottom:20px;
-}
-
-.check{
-    margin:12px 0;
-    font-weight:600;
-}
-
-
-/* =========================
-   EVENTS
-========================= */
-
-.events{
-    background:white;
-}
-
-.event-grid{
+.result-grid{
     display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    text-align:center;
+
+    position:relative;
+}
+
+.result h3{
+    font-size:50px;
+
+    color:#f87171;
+}
+
+.result p{
+    color:#98a2b3;
+
+    margin-top:10px;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.features{
+    background:#f8fafc;
+}
+
+.feature-grid{
+    display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:25px;
 }
 
-.event{
-    border-radius:20px;
-    overflow:hidden;
-    border:1px solid #e5e7eb;
-    transition:.4s;
+.feature{
+    padding:30px;
+
+    background:white;
+
+    border-radius:18px;
+
+    border:1px solid #eaecf0;
+
+    transition:.35s;
 }
 
-.event:hover{
-    transform:translateY(-10px);
-    box-shadow:0 20px 40px rgba(0,0,0,.1);
+.feature:hover{
+    transform:translateY(-8px);
+
+    border-color:#fecaca;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.07);
 }
 
-.event-top{
-    height:150px;
+.feature-icon{
+    width:55px;
+    height:55px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    font-size:65px;
+    border-radius:14px;
 
-    background:#dbeafe;
+    background:#fee2e2;
+
+    font-size:27px;
+
+    margin-bottom:20px;
 }
 
-.event-content{
-    padding:25px;
-}
-
-.event-content h3{
+.feature h3{
     margin-bottom:10px;
 }
 
-.event-content p{
-    color:#64748b;
+.feature p{
+    color:#667085;
+
+    line-height:1.7;
 }
 
 
-/* =========================
+/* =========================================
+   ABOUT
+========================================= */
+
+.about{
+    background:white;
+}
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.about-visual{
+    min-height:450px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(135deg,#991b1b,#dc2626);
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 25px 60px rgba(220,38,38,.25);
+}
+
+.about-visual::before{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.1);
+
+    top:-100px;
+    right:-70px;
+}
+
+.about-visual::after{
+    content:"∑  ∫  π  Δ  E=mc²";
+
+    position:absolute;
+
+    left:30px;
+    bottom:50px;
+
+    color:rgba(255,255,255,.7);
+
+    font-size:34px;
+
+    font-weight:900;
+
+    transform:rotate(-8deg);
+}
+
+.about-content h2{
+    font-size:45px;
+
+    margin-bottom:20px;
+}
+
+.about-content p{
+    color:#667085;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+}
+
+.check{
+    margin:13px 0;
+
+    font-weight:700;
+}
+
+.check span{
+    color:#dc2626;
+}
+
+
+/* =========================================
+   FACULTY
+========================================= */
+
+.faculty{
+    background:#f8fafc;
+}
+
+.faculty-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+.teacher{
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid #eaecf0;
+
+    transition:.4s;
+}
+
+.teacher:hover{
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 45px rgba(0,0,0,.1);
+}
+
+.teacher-photo{
+    height:220px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(135deg,#fee2e2,#fecaca);
+
+    font-size:90px;
+}
+
+.teacher-info{
+    padding:25px;
+}
+
+.teacher-info h3{
+    margin-bottom:5px;
+}
+
+.teacher-info span{
+    color:#dc2626;
+
+    font-size:14px;
+
+    font-weight:800;
+}
+
+.teacher-info p{
+    color:#667085;
+
+    margin-top:12px;
+
+    line-height:1.6;
+}
+
+
+/* =========================================
+   TESTIMONIALS
+========================================= */
+
+.testimonials{
+    background:white;
+}
+
+.testimonial-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+.testimonial{
+    padding:30px;
+
+    background:#f8fafc;
+
+    border-radius:18px;
+
+    border:1px solid #eaecf0;
+}
+
+.stars{
+    color:#f59e0b;
+
+    font-size:20px;
+
+    margin-bottom:15px;
+}
+
+.testimonial p{
+    color:#475467;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+}
+
+.student{
+    font-weight:800;
+}
+
+.student span{
+    display:block;
+
+    color:#dc2626;
+
+    font-size:13px;
+
+    margin-top:4px;
+}
+
+
+/* =========================================
    CTA
-========================= */
+========================================= */
 
 .cta{
     text-align:center;
 
     background:
-    linear-gradient(
-        135deg,
-        #2563eb,
-        #1d4ed8
-    );
+    linear-gradient(135deg,#b91c1c,#dc2626);
 
     color:white;
 }
 
 .cta h2{
-    font-size:45px;
+    font-size:50px;
+
     margin-bottom:15px;
 }
 
 .cta p{
-    color:#dbeafe;
+    color:#fee2e2;
+
     margin-bottom:30px;
 }
 
 .cta .btn{
     background:white;
-    color:#2563eb;
+
+    color:#b91c1c;
 }
 
 
-/* =========================
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
 footer{
-    background:#0f172a;
+    background:#0b1220;
+
     color:white;
 
-    padding:50px 8%;
+    padding:60px 8%;
 }
 
 .footer-grid{
     display:grid;
+
     grid-template-columns:2fr 1fr 1fr;
+
     gap:50px;
 }
 
@@ -711,29 +819,35 @@ footer h3{
 
 footer p,
 footer li{
-    color:#94a3b8;
-    line-height:1.8;
+    color:#98a2b3;
+
+    line-height:1.9;
 }
 
 footer ul{
     list-style:none;
 }
 
-.copyright{
-    margin-top:40px;
-    padding-top:25px;
+footer li:hover{
+    color:white;
+}
 
-    border-top:1px solid #334155;
+.copyright{
+    border-top:1px solid #344054;
+
+    margin-top:40px;
+
+    padding-top:25px;
 
     text-align:center;
 
-    color:#64748b;
+    color:#667085;
 }
 
 
-/* =========================
+/* =========================================
    ANIMATIONS
-========================= */
+========================================= */
 
 @keyframes float{
 
@@ -747,34 +861,22 @@ footer ul{
 
 }
 
-@keyframes schoolFloat{
+@keyframes pulse{
 
     0%,100%{
-        transform:translateY(0);
+        transform:scale(1);
     }
 
     50%{
-        transform:translateY(-10px);
-    }
-
-}
-
-@keyframes cloudMove{
-
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(130vw);
+        transform:scale(1.04);
     }
 
 }
 
 
-/* =========================
+/* =========================================
    RESPONSIVE
-========================= */
+========================================= */
 
 @media(max-width:900px){
 
@@ -782,21 +884,26 @@ footer ul{
         display:none;
     }
 
+    .nav-btn{
+        display:none;
+    }
+
     .hero{
-        padding-top:120px;
+        padding-top:130px;
     }
 
-    .school{
-        opacity:.25;
-        right:-40px;
+    .orb1{
+        right:-250px;
     }
 
-    .cards,
-    .event-grid{
+    .exam-grid,
+    .feature-grid,
+    .faculty-grid,
+    .testimonial-grid{
         grid-template-columns:1fr;
     }
 
-    .stats-grid{
+    .result-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
@@ -809,23 +916,28 @@ footer ul{
 @media(max-width:600px){
 
     section{
-        padding:70px 6%;
+        padding:75px 6%;
     }
 
     .hero h1{
-        font-size:48px;
+        font-size:52px;
+        letter-spacing:-3px;
     }
 
     .hero p{
         font-size:16px;
     }
 
-    .school{
-        transform:scale(.7);
-        right:-100px;
+    .section-title h2,
+    .about-content h2{
+        font-size:35px;
     }
 
-    .stats-grid{
+    .cta h2{
+        font-size:36px;
+    }
+
+    .result-grid{
         grid-template-columns:1fr;
     }
 
@@ -833,103 +945,90 @@ footer ul{
         grid-template-columns:1fr;
     }
 
-    .section-title h2,
-    .about-text h2,
-    .cta h2{
-        font-size:34px;
-    }
-
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- =========================================
      NAVIGATION
-========================= -->
+========================================= -->
 
 <nav>
 
     <div class="logo">
-        Bright<span>Future</span>
+        ASHIN <span>ACADEMY</span>
     </div>
 
     <ul class="nav-links">
+
         <li><a href="#home">Home</a></li>
+
+        <li><a href="#courses">Courses</a></li>
+
+        <li><a href="#results">Results</a></li>
+
+        <li><a href="#faculty">Faculty</a></li>
+
         <li><a href="#about">About</a></li>
-        <li><a href="#programs">Programs</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#contact">Contact</a></li>
+
     </ul>
+
+    <a href="#admission" class="nav-btn">
+        Enquire Now
+    </a>
 
 </nav>
 
 
-<!-- =========================
+<!-- =========================================
      HERO
-========================= -->
+========================================= -->
 
 <section class="hero" id="home">
 
-    <div class="cloud one"></div>
-    <div class="cloud two"></div>
+    <div class="hero-orb orb1"></div>
 
-    <div class="circle one"></div>
-    <div class="circle two"></div>
-    <div class="circle three"></div>
+    <div class="hero-orb orb2"></div>
+
+    <div class="symbol s1">∑</div>
+
+    <div class="symbol s2">π</div>
+
+    <div class="symbol s3">DNA</div>
+
 
     <div class="hero-content">
 
-        <div class="badge">
-            ✨ Welcome to Bright Future Academy
+        <div class="hero-tag">
+            🚀 NEET & JEE COACHING
         </div>
 
         <h1>
-            Learn.<br>
-            Grow.<br>
-            <span>Shine.</span>
+            Prepare Today.<br>
+            <span>Achieve Tomorrow.</span>
         </h1>
 
         <p>
-            A modern school where curiosity becomes knowledge,
-            creativity becomes confidence,and every student
-            gets the opportunity to build a brighter future.
+            Welcome to <strong>ASHIN ACADEMY</strong> —
+            a focused learning environment for students
+            preparing for NEET,JEE Main and JEE Advanced.
         </p>
 
-        <div class="buttons">
+        <div class="hero-buttons">
 
-            <a href="#about" class="btn btn-primary">
-                Discover Our School →
+            <a href="#courses" class="btn btn-primary">
+                Explore Courses →
             </a>
 
-            <a href="#programs" class="btn btn-secondary">
-                Explore Programs
+            <a href="#admission" class="btn btn-outline">
+                Book a Counselling
             </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- SCHOOL ILLUSTRATION -->
-
-    <div class="school">
-
-        <div class="flag"></div>
-
-        <div class="school-roof"></div>
-
-        <div class="school-body">
-
-            <div class="window left"></div>
-
-            <div class="window right"></div>
-
-            <div class="school-door"></div>
 
         </div>
 
@@ -938,63 +1037,89 @@ footer ul{
 </section>
 
 
-<!-- =========================
-     FEATURES
-========================= -->
+<!-- =========================================
+     COURSES
+========================================= -->
 
-<section class="features" id="programs">
+<section class="exams" id="courses">
 
     <div class="section-title">
 
-        <h2>Why Choose Us?</h2>
+        <div class="mini">
+            Our Programs
+        </div>
+
+        <h2>
+            Choose Your Target
+        </h2>
 
         <p>
-            More than classrooms — a place where students thrive.
+            Structured preparation designed around your goal.
         </p>
 
     </div>
 
 
-    <div class="cards">
+    <div class="exam-grid">
 
-        <div class="card">
 
-            <div class="icon">🎓</div>
+        <div class="exam-card">
 
-            <h3>Expert Teachers</h3>
+            <div class="exam-icon">
+                🧬
+            </div>
+
+            <h3>NEET</h3>
 
             <p>
-                Passionate educators who inspire students
-                and make learning exciting,easy and meaningful.
+                Comprehensive preparation for Physics,
+                Chemistry and Biology with regular tests
+                and performance analysis.
             </p>
+
+            <a href="#">
+                Explore NEET →
+            </a>
 
         </div>
 
 
-        <div class="card">
+        <div class="exam-card">
 
-            <div class="icon">🔬</div>
+            <div class="exam-icon">
+                ⚛️
+            </div>
 
-            <h3>Modern Learning</h3>
+            <h3>JEE Main</h3>
 
             <p>
-                Smart classrooms,science laboratories,
-                technology and practical learning experiences.
+                Concept-focused preparation with problem
+                solving,practice sessions and mock tests.
             </p>
+
+            <a href="#">
+                Explore JEE Main →
+            </a>
 
         </div>
 
 
-        <div class="card">
+        <div class="exam-card">
 
-            <div class="icon">⚽</div>
+            <div class="exam-icon">
+                🚀
+            </div>
 
-            <h3>Beyond Academics</h3>
+            <h3>JEE Advanced</h3>
 
             <p>
-                Sports,arts,music,clubs and activities
-                that help students discover their talents.
+                Advanced-level concepts and challenging
+                problems for students targeting IITs.
             </p>
+
+            <a href="#">
+                Explore JEE Advanced →
+            </a>
 
         </div>
 
@@ -1003,32 +1128,72 @@ footer ul{
 </section>
 
 
-<!-- =========================
-     STATS
-========================= -->
+<!-- =========================================
+     RESULTS
+========================================= -->
 
-<section class="stats">
+<section class="results" id="results">
 
-    <div class="stats-grid">
+    <div class="section-title">
 
-        <div class="stat">
-            <h3>25+</h3>
-            <p>Years of Excellence</p>
+        <div class="mini">
+            Our Track Record
         </div>
 
-        <div class="stat">
-            <h3>2,500+</h3>
-            <p>Students</p>
-        </div>
+        <h2>
+            Numbers That Inspire
+        </h2>
 
-        <div class="stat">
-            <h3>120+</h3>
-            <p>Teachers & Staff</p>
-        </div>
+        <p>
+            A fictional demonstration section for ASHIN ACADEMY.
+        </p>
 
-        <div class="stat">
+    </div>
+
+
+    <div class="result-grid">
+
+        <div class="result">
+
             <h3>98%</h3>
-            <p>Parent Satisfaction</p>
+
+            <p>
+                Test Participation
+            </p>
+
+        </div>
+
+
+        <div class="result">
+
+            <h3>500+</h3>
+
+            <p>
+                Students Mentored
+            </p>
+
+        </div>
+
+
+        <div class="result">
+
+            <h3>150+</h3>
+
+            <p>
+                Mock Tests
+            </p>
+
+        </div>
+
+
+        <div class="result">
+
+            <h3>25+</h3>
+
+            <p>
+                Expert Faculty
+            </p>
+
         </div>
 
     </div>
@@ -1036,49 +1201,203 @@ footer ul{
 </section>
 
 
-<!-- =========================
+<!-- =========================================
+     FEATURES
+========================================= -->
+
+<section class="features">
+
+    <div class="section-title">
+
+        <div class="mini">
+            Why ASHIN
+        </div>
+
+        <h2>
+            Everything You Need To Prepare
+        </h2>
+
+        <p>
+            A complete learning ecosystem focused on competitive exams.
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                📚
+            </div>
+
+            <h3>
+                Structured Study Material
+            </h3>
+
+            <p>
+                Carefully organised notes,practice questions
+                and revision resources for every subject.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                📝
+            </div>
+
+            <h3>
+                Regular Mock Tests
+            </h3>
+
+            <p>
+                Frequent tests help students understand
+                their preparation level and improve accuracy.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                📊
+            </div>
+
+            <h3>
+                Performance Analysis
+            </h3>
+
+            <p>
+                Track your progress,identify weak areas
+                and plan your next stage of preparation.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                👨‍🏫
+            </div>
+
+            <h3>
+                Expert Mentorship
+            </h3>
+
+            <p>
+                Guidance from experienced teachers throughout
+                your preparation journey.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                💡
+            </div>
+
+            <h3>
+                Doubt Solving
+            </h3>
+
+            <p>
+                Dedicated doubt-solving sessions to help
+                students strengthen difficult concepts.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🎯
+            </div>
+
+            <h3>
+                Goal-Based Planning
+            </h3>
+
+            <p>
+                Study plans designed around your examination
+                timeline and individual learning needs.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
      ABOUT
-========================= -->
+========================================= -->
 
 <section class="about" id="about">
 
     <div class="about-grid">
 
-        <div class="about-image"></div>
+
+        <div class="about-visual"></div>
 
 
-        <div class="about-text">
+        <div class="about-content">
 
-            <h2>
-                Building Tomorrow's Leaders
-            </h2>
+            <div class="section-title" style="text-align:left;margin-bottom:25px;">
+
+                <div class="mini">
+                    About ASHIN
+                </div>
+
+                <h2>
+                    Focused Learning.<br>
+                    Strong Foundations.
+                </h2>
+
+            </div>
+
 
             <p>
-                Bright Future Academy is a fictional modern
-                educational institution dedicated to creating
-                confident,creative and responsible young minds.
+                ASHIN ACADEMY is designed around one simple idea:
+                competitive exam preparation should be focused,
+               structured and student-centred.
             </p>
 
             <p>
-                Our approach combines strong academics with
-                creativity,technology,sports and real-world
-                experiences.
+                Our learning model combines concept building,
+               problem solving,regular testing and continuous
+                academic guidance.
             </p>
 
+
             <div class="check">
-                ✓ Student-focused education
+                <span>✓</span>
+                Concept-first teaching
             </div>
 
             <div class="check">
-                ✓ Safe and friendly environment
+                <span>✓</span>
+                Regular assessments
             </div>
 
             <div class="check">
-                ✓ Technology-enabled classrooms
+                <span>✓</span>
+                Personalised mentoring
             </div>
 
             <div class="check">
-                ✓ Sports and cultural activities
+                <span>✓</span>
+                Focused NEET & JEE preparation
             </div>
 
         </div>
@@ -1088,38 +1407,51 @@ footer ul{
 </section>
 
 
-<!-- =========================
-     EVENTS
-========================= -->
+<!-- =========================================
+     FACULTY
+========================================= -->
 
-<section class="events" id="events">
+<section class="faculty" id="faculty">
 
     <div class="section-title">
 
-        <h2>Life at Bright Future</h2>
+        <div class="mini">
+            Meet The Faculty
+        </div>
+
+        <h2>
+            Learn From Experts
+        </h2>
 
         <p>
-            Something exciting is always happening.
+            Sample faculty profiles for the website design.
         </p>
 
     </div>
 
 
-    <div class="event-grid">
+    <div class="faculty-grid">
 
-        <div class="event">
 
-            <div class="event-top">
-                🧪
+        <div class="teacher">
+
+            <div class="teacher-photo">
+                👨‍🏫
             </div>
 
-            <div class="event-content">
+            <div class="teacher-info">
 
-                <h3>Science Exhibition</h3>
+                <h3>
+                    Dr. Arjun Sharma
+                </h3>
+
+                <span>
+                    PHYSICS FACULTY
+                </span>
 
                 <p>
-                    Students showcase creative experiments,
-                   models and innovative ideas.
+                    Focused on conceptual understanding
+                    and advanced problem solving.
                 </p>
 
             </div>
@@ -1127,19 +1459,25 @@ footer ul{
         </div>
 
 
-        <div class="event">
+        <div class="teacher">
 
-            <div class="event-top">
-                🎨
+            <div class="teacher-photo">
+                👩‍🔬
             </div>
 
-            <div class="event-content">
+            <div class="teacher-info">
 
-                <h3>Creative Arts Week</h3>
+                <h3>
+                    Dr. Priya Das
+                </h3>
+
+                <span>
+                    BIOLOGY FACULTY
+                </span>
 
                 <p>
-                    A celebration of painting,music,dance
-                    and student creativity.
+                    Specialises in NCERT-based learning,
+                   diagrams and conceptual clarity.
                 </p>
 
             </div>
@@ -1147,19 +1485,25 @@ footer ul{
         </div>
 
 
-        <div class="event">
+        <div class="teacher">
 
-            <div class="event-top">
-                🏆
+            <div class="teacher-photo">
+                👨‍🔬
             </div>
 
-            <div class="event-content">
+            <div class="teacher-info">
 
-                <h3>Annual Sports Meet</h3>
+                <h3>
+                    Rahul Mehta
+                </h3>
+
+                <span>
+                    CHEMISTRY FACULTY
+                </span>
 
                 <p>
-                    Students compete,collaborate and
-                    celebrate sportsmanship.
+                    Makes complex chemistry concepts
+                    easier through structured problem solving.
                 </p>
 
             </div>
@@ -1171,42 +1515,135 @@ footer ul{
 </section>
 
 
-<!-- =========================
-     CTA
-========================= -->
+<!-- =========================================
+     TESTIMONIALS
+========================================= -->
 
-<section class="cta" id="contact">
+<section class="testimonials">
+
+    <div class="section-title">
+
+        <div class="mini">
+            Student Voices
+        </div>
+
+        <h2>
+            What Students Say
+        </h2>
+
+    </div>
+
+
+    <div class="testimonial-grid">
+
+
+        <div class="testimonial">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "The structured classes and regular tests
+                helped me understand where I needed to improve."
+            </p>
+
+            <div class="student">
+                Ananya
+                <span>
+                    NEET Aspirant
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="testimonial">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "The teachers focus strongly on concepts
+                instead of simply asking us to memorise formulas."
+            </p>
+
+            <div class="student">
+                Rohan
+                <span>
+                    JEE Aspirant
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="testimonial">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "The mock tests and performance analysis
+                made it much easier to track my preparation."
+            </p>
+
+            <div class="student">
+                Meera
+                <span>
+                    NEET Aspirant
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ADMISSION CTA
+========================================= -->
+
+<section class="cta" id="admission">
 
     <h2>
-        Ready to Start Your Journey?
+        Your Target. Your Journey. Your Future.
     </h2>
 
     <p>
-        Discover a school where every student has room to shine.
+        Start your NEET or JEE preparation with ASHIN ACADEMY.
     </p>
 
-    <a href="mailto:hello@brightfuture.edu" class="btn">
-        Contact Our School
+    <a href="mailto:admissions@ashinacademy.com" class="btn">
+        Enquire About Admission
     </a>
 
 </section>
 
 
-<!-- =========================
+<!-- =========================================
      FOOTER
-========================= -->
+========================================= -->
 
 <footer>
 
     <div class="footer-grid">
 
+
         <div>
 
-            <h3>Bright Future Academy</h3>
+            <h3>
+                ASHIN ACADEMY
+            </h3>
 
             <p>
-                Inspiring young minds through knowledge,
-               creativity and curiosity.
+                NEET & JEE coaching focused on strong
+                concepts,consistent practice and
+                structured preparation.
             </p>
 
         </div>
@@ -1214,14 +1651,27 @@ footer ul{
 
         <div>
 
-            <h3>Quick Links</h3>
+            <h3>
+                Quick Links
+            </h3>
 
             <ul>
 
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#events">Events</a></li>
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#courses">Courses</a>
+                </li>
+
+                <li>
+                    <a href="#results">Results</a>
+                </li>
+
+                <li>
+                    <a href="#faculty">Faculty</a>
+                </li>
 
             </ul>
 
@@ -1230,18 +1680,20 @@ footer ul{
 
         <div>
 
-            <h3>Contact</h3>
+            <h3>
+                Contact
+            </h3>
 
             <p>
-                123 Learning Street
+                ASHIN ACADEMY
             </p>
 
             <p>
-                Knowledge City
+                NEET & JEE Coaching Centre
             </p>
 
             <p>
-                hello@brightfuture.edu
+                admissions@ashinacademy.com
             </p>
 
         </div>
@@ -1251,7 +1703,7 @@ footer ul{
 
     <div class="copyright">
 
-        © 2026 Bright Future Academy. All Rights Reserved.
+        © 2026 ASHIN ACADEMY. All Rights Reserved.
 
     </div>
 
