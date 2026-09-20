@@ -1,0 +1,1263 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Bright Future Academy</title>
+
+<style>
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f9ff;
+    color:#17233c;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+section{
+    padding:90px 8%;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 8%;
+
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:#2563eb;
+}
+
+.logo span{
+    color:#f59e0b;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#2563eb;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(135deg,#e9f4ff,#ffffff 55%,#fff5d9);
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+    max-width:650px;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:9px 18px;
+    border-radius:50px;
+
+    background:#dbeafe;
+    color:#2563eb;
+
+    font-size:14px;
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,82px);
+    line-height:1.02;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#2563eb;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.7;
+    color:#64748b;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 27px;
+    border-radius:12px;
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#2563eb;
+    color:white;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(37,99,235,.4);
+}
+
+.btn-secondary{
+    background:white;
+    border:1px solid #dbe3ef;
+}
+
+.btn-secondary:hover{
+    transform:translateY(-5px);
+}
+
+
+/* =========================
+   FLOATING DECORATIONS
+========================= */
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(1px);
+}
+
+.circle.one{
+    width:350px;
+    height:350px;
+
+    background:#bfdbfe;
+
+    right:8%;
+    top:20%;
+
+    animation:float 6s ease-in-out infinite;
+}
+
+.circle.two{
+    width:180px;
+    height:180px;
+
+    background:#fde68a;
+
+    right:30%;
+    bottom:8%;
+
+    animation:float 4s ease-in-out infinite reverse;
+}
+
+.circle.three{
+    width:100px;
+    height:100px;
+
+    background:#bbf7d0;
+
+    right:5%;
+    bottom:20%;
+
+    animation:float 5s ease-in-out infinite;
+}
+
+
+/* =========================
+   SCHOOL ILLUSTRATION
+========================= */
+
+.school{
+    position:absolute;
+
+    right:9%;
+    bottom:12%;
+
+    width:360px;
+    height:300px;
+
+    z-index:4;
+
+    animation:schoolFloat 5s ease-in-out infinite;
+}
+
+.school-roof{
+    position:absolute;
+
+    top:15px;
+    left:20px;
+
+    width:320px;
+    height:90px;
+
+    background:#2563eb;
+
+    clip-path:polygon(50% 0,100% 100%,0 100%);
+
+    border-radius:10px;
+}
+
+.school-body{
+    position:absolute;
+
+    top:90px;
+    left:50px;
+
+    width:260px;
+    height:170px;
+
+    background:white;
+
+    border:6px solid #17233c;
+    border-radius:8px;
+}
+
+.school-door{
+    position:absolute;
+
+    bottom:0;
+    left:105px;
+
+    width:50px;
+    height:90px;
+
+    background:#f59e0b;
+
+    border:4px solid #17233c;
+}
+
+.window{
+    position:absolute;
+
+    width:45px;
+    height:45px;
+
+    background:#93c5fd;
+
+    border:4px solid #17233c;
+
+    top:35px;
+}
+
+.window.left{
+    left:25px;
+}
+
+.window.right{
+    right:25px;
+}
+
+.flag{
+    position:absolute;
+
+    top:0;
+    left:175px;
+
+    width:5px;
+    height:65px;
+
+    background:#17233c;
+}
+
+.flag::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:5px;
+
+    width:45px;
+    height:28px;
+
+    background:#f59e0b;
+
+    clip-path:polygon(0 0,100% 25%,70% 100%,0 75%);
+}
+
+
+/* =========================
+   CLOUDS
+========================= */
+
+.cloud{
+    position:absolute;
+
+    width:130px;
+    height:45px;
+
+    background:white;
+
+    border-radius:50px;
+
+    opacity:.8;
+
+    animation:cloudMove 20s linear infinite;
+}
+
+.cloud::before,
+.cloud::after{
+    content:"";
+
+    position:absolute;
+
+    background:white;
+
+    border-radius:50%;
+}
+
+.cloud::before{
+    width:60px;
+    height:60px;
+
+    left:20px;
+    bottom:10px;
+}
+
+.cloud::after{
+    width:75px;
+    height:75px;
+
+    right:20px;
+    bottom:5px;
+}
+
+.cloud.one{
+    top:18%;
+    left:-150px;
+}
+
+.cloud.two{
+    top:35%;
+    left:-300px;
+
+    animation-delay:8s;
+}
+
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.section-title p{
+    color:#64748b;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    background:white;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    padding:35px;
+
+    background:#f8fafc;
+
+    border-radius:20px;
+
+    border:1px solid #e5e7eb;
+
+    transition:.4s;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    background:#dbeafe;
+
+    border-radius:50%;
+
+    right:-40px;
+    top:-40px;
+
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 45px rgba(15,23,42,.1);
+}
+
+.card:hover::before{
+    transform:scale(2);
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:20px;
+    position:relative;
+}
+
+.card h3{
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#64748b;
+    line-height:1.7;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    background:#17233c;
+    color:white;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    text-align:center;
+    gap:30px;
+}
+
+.stat h3{
+    font-size:45px;
+    color:#60a5fa;
+}
+
+.stat p{
+    color:#cbd5e1;
+    margin-top:8px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:#f8fafc;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    min-height:400px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #60a5fa
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 25px 60px rgba(37,99,235,.25);
+}
+
+.about-image::before{
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    background:#fde68a;
+
+    border-radius:50%;
+
+    top:-80px;
+    right:-60px;
+}
+
+.about-image::after{
+    content:"🏫";
+
+    position:absolute;
+
+    font-size:150px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+}
+
+.about-text h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    color:#64748b;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.check{
+    margin:12px 0;
+    font-weight:600;
+}
+
+
+/* =========================
+   EVENTS
+========================= */
+
+.events{
+    background:white;
+}
+
+.event-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.event{
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid #e5e7eb;
+    transition:.4s;
+}
+
+.event:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.1);
+}
+
+.event-top{
+    height:150px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:65px;
+
+    background:#dbeafe;
+}
+
+.event-content{
+    padding:25px;
+}
+
+.event-content h3{
+    margin-bottom:10px;
+}
+
+.event-content p{
+    color:#64748b;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color:white;
+}
+
+.cta h2{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#dbeafe;
+    margin-bottom:30px;
+}
+
+.cta .btn{
+    background:white;
+    color:#2563eb;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#0f172a;
+    color:white;
+
+    padding:50px 8%;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:50px;
+}
+
+footer h3{
+    margin-bottom:18px;
+}
+
+footer p,
+footer li{
+    color:#94a3b8;
+    line-height:1.8;
+}
+
+footer ul{
+    list-style:none;
+}
+
+.copyright{
+    margin-top:40px;
+    padding-top:25px;
+
+    border-top:1px solid #334155;
+
+    text-align:center;
+
+    color:#64748b;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-18px);
+    }
+
+}
+
+@keyframes schoolFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+@keyframes cloudMove{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(130vw);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .school{
+        opacity:.25;
+        right:-40px;
+    }
+
+    .cards,
+    .event-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:70px 6%;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .school{
+        transform:scale(.7);
+        right:-100px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title h2,
+    .about-text h2,
+    .cta h2{
+        font-size:34px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="logo">
+        Bright<span>Future</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="cloud one"></div>
+    <div class="cloud two"></div>
+
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <div class="circle three"></div>
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✨ Welcome to Bright Future Academy
+        </div>
+
+        <h1>
+            Learn.<br>
+            Grow.<br>
+            <span>Shine.</span>
+        </h1>
+
+        <p>
+            A modern school where curiosity becomes knowledge,
+            creativity becomes confidence,and every student
+            gets the opportunity to build a brighter future.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#about" class="btn btn-primary">
+                Discover Our School →
+            </a>
+
+            <a href="#programs" class="btn btn-secondary">
+                Explore Programs
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCHOOL ILLUSTRATION -->
+
+    <div class="school">
+
+        <div class="flag"></div>
+
+        <div class="school-roof"></div>
+
+        <div class="school-body">
+
+            <div class="window left"></div>
+
+            <div class="window right"></div>
+
+            <div class="school-door"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features" id="programs">
+
+    <div class="section-title">
+
+        <h2>Why Choose Us?</h2>
+
+        <p>
+            More than classrooms — a place where students thrive.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">🎓</div>
+
+            <h3>Expert Teachers</h3>
+
+            <p>
+                Passionate educators who inspire students
+                and make learning exciting,easy and meaningful.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🔬</div>
+
+            <h3>Modern Learning</h3>
+
+            <p>
+                Smart classrooms,science laboratories,
+                technology and practical learning experiences.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">⚽</div>
+
+            <h3>Beyond Academics</h3>
+
+            <p>
+                Sports,arts,music,clubs and activities
+                that help students discover their talents.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats">
+
+    <div class="stats-grid">
+
+        <div class="stat">
+            <h3>25+</h3>
+            <p>Years of Excellence</p>
+        </div>
+
+        <div class="stat">
+            <h3>2,500+</h3>
+            <p>Students</p>
+        </div>
+
+        <div class="stat">
+            <h3>120+</h3>
+            <p>Teachers & Staff</p>
+        </div>
+
+        <div class="stat">
+            <h3>98%</h3>
+            <p>Parent Satisfaction</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+    <div class="about-grid">
+
+        <div class="about-image"></div>
+
+
+        <div class="about-text">
+
+            <h2>
+                Building Tomorrow's Leaders
+            </h2>
+
+            <p>
+                Bright Future Academy is a fictional modern
+                educational institution dedicated to creating
+                confident,creative and responsible young minds.
+            </p>
+
+            <p>
+                Our approach combines strong academics with
+                creativity,technology,sports and real-world
+                experiences.
+            </p>
+
+            <div class="check">
+                ✓ Student-focused education
+            </div>
+
+            <div class="check">
+                ✓ Safe and friendly environment
+            </div>
+
+            <div class="check">
+                ✓ Technology-enabled classrooms
+            </div>
+
+            <div class="check">
+                ✓ Sports and cultural activities
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EVENTS
+========================= -->
+
+<section class="events" id="events">
+
+    <div class="section-title">
+
+        <h2>Life at Bright Future</h2>
+
+        <p>
+            Something exciting is always happening.
+        </p>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event">
+
+            <div class="event-top">
+                🧪
+            </div>
+
+            <div class="event-content">
+
+                <h3>Science Exhibition</h3>
+
+                <p>
+                    Students showcase creative experiments,
+                   models and innovative ideas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="event">
+
+            <div class="event-top">
+                🎨
+            </div>
+
+            <div class="event-content">
+
+                <h3>Creative Arts Week</h3>
+
+                <p>
+                    A celebration of painting,music,dance
+                    and student creativity.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="event">
+
+            <div class="event-top">
+                🏆
+            </div>
+
+            <div class="event-content">
+
+                <h3>Annual Sports Meet</h3>
+
+                <p>
+                    Students compete,collaborate and
+                    celebrate sportsmanship.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta" id="contact">
+
+    <h2>
+        Ready to Start Your Journey?
+    </h2>
+
+    <p>
+        Discover a school where every student has room to shine.
+    </p>
+
+    <a href="mailto:hello@brightfuture.edu" class="btn">
+        Contact Our School
+    </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>Bright Future Academy</h3>
+
+            <p>
+                Inspiring young minds through knowledge,
+               creativity and curiosity.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#events">Events</a></li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>Contact</h3>
+
+            <p>
+                123 Learning Street
+            </p>
+
+            <p>
+                Knowledge City
+            </p>
+
+            <p>
+                hello@brightfuture.edu
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Bright Future Academy. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
+```
